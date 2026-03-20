@@ -1,0 +1,25 @@
+name: .NET Core Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x' # Asumsi proyek menggunakan .NET 8
+        
+    - name: Restore dependencies
+      run: dotnet restore SFCore.OnnxRuntimeProvider.Api
+      
+    - name: Build
+      run: dotnet build SFCore.OnnxRuntimeProvider.Api --no-restore --configuration Release
