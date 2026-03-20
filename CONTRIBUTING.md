@@ -1,18 +1,43 @@
-# Panduan Berkontribusi (Contributing Guidelines)
+# Contributing Guidelines / Panduan Berkontribusi
 
-Terima kasih atas minat Anda untuk berkontribusi pada proyek ini! Kami sangat menghargai dukungan Anda. Berikut adalah beberapa langkah dasar untuk mulai berkontribusi:
+[**Bahasa Indonesia**](#bahasa-indonesia) | [**English**](#english)
 
-## Langkah-langkah Kontribusi
+---
 
-1. **Fork Repositori**: Buat salinan repositori ini (Fork) ke akun GitHub Anda.
-2. **Buat Branch Baru**: Sangat disarankan untuk membuat branch baru saat mengerjakan fitur atau perbaikan _bug_ (`git checkout -b fitur-keren-saya`).
-3. **Commit Perubahan**: Simpan perubahan kode Anda dengan pesan komit yang jelas dan deskriptif (`git commit -m 'Menambahkan fitur keren'`).
-4. **Push ke Fork Anda**: Unggah branch tersebut ke GitHub (`git push origin fitur-keren-saya`).
-5. **Buat Pull Request (PR)**: Buka Pull Request dari branch Anda ke branch `main` repositori utama. Berikan deskripsi mendetail terkait apa yang Anda ubah.
+<div id="bahasa-indonesia"></div>
 
-## Standar Kode
-- Ikuti standar penulisan kode (Code Convention) untuk bahasa C#.
-- Pastikan kode lulus kompilasi tanpa peringatan (_warnings_) atau _errors_ (`dotnet build`).
-- Jika memungkinkan, sertakan unit tests untuk fitur atau perbaikan yang Anda buat.
+## 🇮🇩 Bahasa Indonesia
 
-Terima kasih karena telah membuat proyek ini menjadi lebih baik!
+Terima kasih atas minat Anda untuk berkontribusi! Kami sangat menghargai dukungan Anda untuk membuat proyek ini lebih baik.
+
+### Langkah-langkah Kontribusi
+
+1. **Fork Repositori**: Buat salinan repositori ini ke akun GitHub Anda.
+2. **Buat Branch Baru**: Gunakan nama yang deskriptif (contoh: `fitur/optimasi-gpu` atau `bugfix/koneksi-api`).
+3. **Commit Perubahan**: Gunakan pesan commit yang jelas.
+4. **Push & Pull Request**: Unggah ke fork Anda dan buka Pull Request ke branch `main`.
+
+### Standar Kode
+- Ikuti standar penulisan kode C# (Microsoft Coding Conventions).
+- Pastikan kode dapat dikompilasi tanpa error (`dotnet build`).
+- Sertakan pengujian (unit tests) jika memungkinkan.
+
+---
+
+<div id="english"></div>
+
+## 🇺🇸 English
+
+Thank you for your interest in contributing! We appreciate your support in making this project better.
+
+### Contribution Steps
+
+1. **Fork the Repository**: Create a copy of this repository on your GitHub account.
+2. **Create a New Branch**: Use descriptive names (e.g., `feature/gpu-optimization` or `bugfix/api-connection`).
+3. **Commit Changes**: Use clear and concise commit messages.
+4. **Push & Pull Request**: Push to your fork and open a Pull Request to the `main` branch.
+
+### Coding Standards
+- Follow C# coding standards (Microsoft Coding Conventions).
+- Ensure the code compiles without errors (`dotnet build`).
+- Include unit tests if possible.
