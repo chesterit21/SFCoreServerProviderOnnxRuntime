@@ -44,6 +44,17 @@ Jika Anda ingin performa yang lebih optimal:
 2. Sertakan **informasi spesifikasi perangkat keras (GPU/CPU/RAM)** Anda.
 3. Minta AI untuk mengoptimalkan parameter inisialisasi agar sesuai dengan hardware Anda demi efisiensi maksimal.
 
+### 📊 Hasil Benchmark & Performa
+
+Proyek ini telah diuji secara ekstensif pada hardware kelas server (Xeon v4) dan berhasil menangani **64,000 tokens context window** dengan stabil.
+
+- **Konteks Panjang**: Mendukung hingga 64K tokens dengan degradasi performa minimal.
+- **Efisiensi**: Arsitektur hybrid memberikan kecepatan prefill yang konsisten bahkan pada context besar.
+- **Melampaui Standar**: Berbeda dengan **llama.cpp** atau **Ollama** yang seringkali tidak stabil atau sangat lambat pada CPU untuk konteks di atas 8K, proyek ini berhasil menjalankan **64K context secara penuh** dengan stabil pada hardware tahun 2016.
+
+> [!TIP]
+> Lihat laporan performa lengkap dan statistik benchmark di: **[BENCHMARK.md](BENCHMARK.md)**
+
 ---
 
 <div id="english"></div>
@@ -85,6 +96,17 @@ To achieve maximum performance:
 1. Share the `HardwareDetector.cs`, `Program.cs`, and `Qwen35inferenceengine.cs` files with an AI (Claude/Gemini/ZAI).
 2. Provide your **hardware specifications (GPU/CPU/RAM)**.
 3. Ask the AI to optimize the initialization parameters to match your specific hardware for peak efficiency.
+
+### 📊 Benchmarks & Performance
+
+This project has been extensively tested on server-grade hardware (Xeon v4) and successfully handles a **64,000 tokens context window** with high stability.
+
+- **Long Context**: Supports up to 64K tokens with minimal performance degradation.
+- **Efficiency**: The hybrid architecture ensures consistent prefill speeds even at large context scales.
+- **Beyond Industry Standards**: Unlike **llama.cpp** or **Ollama**, which often encounter instability or severe slowdowns on CPU for contexts exceeding 8K, this project successfully processes a **full 64K context** with stability on hardware from 2016.
+
+> [!TIP]
+> Read the full performance report and benchmark statistics at: **[BENCHMARK.md](BENCHMARK.md)**
 
 ---
 
