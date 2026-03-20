@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <!--
+      SERVER GC: Wajib untuk throughput tinggi.
+      Gunakan heap per logical processor → kurangi GC pause.
+    -->
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <GarbageCollectionAdaptationMode>0</GarbageCollectionAdaptationMode>
+
+    <!--
+      TIERED PGO: Profile-guided optimization at runtime.
+      Dotnet akan re-JIT hot paths dengan better code setelah warm-up.
+    -->
+    <TieredPGO>true</TieredPGO>
+    <TieredCompilation>true</TieredCompilation>
+
+    <!--
+      AOT: Nonaktifkan — ORT native libs tidak kompatibel.
+    -->
+    <PublishAot>false</PublishAot>
+
+    <!--
+      OPTIMIZE: Full release-mode optimizations.
+    -->
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
+
+    <!--
+      OnnxRuntime GenAI: PRIMARY ENGINE untuk LLM.
+      Manages KV cache natively in C++ — zero managed heap copy per token.
+      Supports Qwen natively (listed on official supported models).
+      v0.12.x adalah versi stabil terbaru.
+    -->
+    <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI"         Version="0.12.2" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Managed" Version="0.12.2" />
+
+    <!--
+      OnnxRuntime Core: FALLBACK ENGINE + dipakai juga oleh GenAI internally.
+      Jangan hapus ini.
+    -->
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.24.3" />
+
+    <!--
+      Tokenizer: ML.Tokenizers sudah support BPE Qwen style.
+      Tapi kita tetap pakai custom QwenTokenizer.cs yang sudah ada
+      karena ia handle Qwen3 special tokens dengan benar.
+    -->
+
+    <!-- Structured Logging -->
+    <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+  </ItemGroup>
+
+</Project>
